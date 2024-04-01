@@ -1,0 +1,200 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    min-height: 100vh;
+    background-color: #C5E4E7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+h1{
+    text-transform: uppercase;
+    font-size: 3.2rem;
+    letter-spacing: 0.5rem;
+    color: #507274;
+}
+.card-container{
+    display: flex;
+    gap: 4rem;
+    background-color: #fff;
+    padding: 2.4rem;
+    border-radius: 1.2rem;
+    width: 800px;
+}
+.input-card{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    gap: 2rem;
+    background-color:#fff;
+}
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+label{
+    color: hsl(186, 14%, 43%);
+    font-size: 1.5rem;
+}
+.bill-input, .people-input{
+    position: relative;
+}
+input:focus {
+    outline: none; /* or border: none; */
+}
+#bill, #people{
+    font-size: 2.4rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    text-align: right;
+    padding-right: 4%;
+    border: none;
+    background-color: #F2F9FB;
+    color: #2D5352;
+}
+input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance:unset;
+        margin: 0;
+}
+.bill-input img, .people-input img{
+    position: absolute;
+    left: 6%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+input::placeholder {
+    color: #9EBBBD;
+}
+.tip-buttons{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.tip-buttons button{
+    background-color: hsl(183, 100%, 15%);
+    border: none;
+    color: #fff;
+    font-size: 2.4rem;
+    padding: 0.8rem 1.6rem;
+    border-radius: 0.8rem;
+    transition: 0.5s;
+    width: 120px;
+}
+.selected{
+    background-color: red !important;
+}
+#custom{
+    font-size: 2.4rem;
+    border: none;
+    background-color: #F2F9FB;
+    color: #2D5352;
+    text-align: center;
+    padding: 0.8rem 1.6rem;
+    border-radius: 0.8rem;
+    width: 120px;
+}
+.output-card{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    background-color:hsl(183, 100%, 15%);
+    padding: 4.2rem 3rem;
+    border-radius: 1.2rem;
+    overflow: hidden;
+
+}
+.tip-container,.total-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+h2{
+    font-size: 4.4rem;
+    color: #33cbb7;
+    
+}
+h3{
+    font-size: 1.5rem;
+    color: #fff;
+}
+.subline{
+    font-size: 1.2rem;
+    color:hsl(184, 14%, 56%);
+}
+.reset{
+    background-color: #28C2AE;
+    border: none;
+    padding: 1.6rem 3.2rem;
+    border-radius: 0.8rem;
+    font-size: 2.4rem;
+    color: #2D5352;
+    opacity: 0.25;
+    transition: 0.5s;
+}
+.reset:hover, .tip-buttons button:hover {
+    background-color: #A0E8E0;
+    opacity: 1;
+    color: #2D5352;
+    cursor: pointer;
+}
+#bill:hover{
+    cursor: pointer;
+}
+.input-card input:invalid {
+    border: 2px solid #E66D54 !important;  /* Customize the border color for invalid input */
+}
+.bill-error, .people-error{
+    color: #E66D54;
+    font-size: 1.5rem;
+}
+.bill-error-container, .people-error-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@media (max-width:800px) {
+    .card-container{
+        flex-direction: column;
+        width: auto;
+    }
+    .input-card,.output-card{
+        width: auto;
+    }
+    .tip-buttons{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .tip-buttons button{
+        width: 100%;
+    }
+    #custom{
+        width: 100%;
+    }
+}
